@@ -1,7 +1,9 @@
-head{
-    display: flex;
-    justify-content: flex-end;
-    .inner{
-        text-align: right;
-    }
+.head{
+position: fixed;
+width: 100%;
+display: flex;
+justify-content: right;
+.inner{
+
+}
 }

@@ -1,4 +1,22 @@
 .flexcenter{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    background-color: bisque;
+    padding:.5rem;
+    body{
+        width: 60rem;
+        height: 20rem;
+        margin:2rem;
+    }
+    .input{
+ 
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        margin: .4rem;
+    }
 }
