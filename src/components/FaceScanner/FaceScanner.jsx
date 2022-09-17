@@ -1,10 +1,12 @@
 import React from "react"
 
-const FaceScanner = () => {
+const FaceScanner = ({input,box}) => {
   return (
-    <div className='centerface'>
-        <p>fd</p>
-        <img alt = 'img' src=""></img>
+    <div className='container'>
+     <div className="centerface">
+      <img id = 'inputimg' alt="" src={input}className="photo"></img>
+      <div className="boudingbox" style = {{top:box.topRow , bottom:box.bottomRow, right:box.rightCol , left:box.leftCol }}></div>
+     </div>
     </div>
   )
 }

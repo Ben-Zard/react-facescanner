@@ -13,28 +13,52 @@ const app = new Clarifai.App (
   );
 function App() {
   const [input, setInput] = useState('');
+  const [img,setImg] = useState('');
+  const [box,setbox] = useState({});
 
+//  useEffect(e =>{
+//      setInput(e.target.value)
+//   },[]);
+  
 function handleInput(e){
-  console.log(e.target.value)
+  setInput(e.target.value);
+  e.preventDefault();
+  console.log("refresh")
 }
 
+ function calcualteface(data) {
+  const face =data.rawData.outputs[0].data.regions[0].region_info.bounding_box;
+  const imagebox = document.getElementById("inputimg");
+  const width =Number(imagebox.width);
+  const height = Number(imagebox.height);
+return{
+  leftCol: face.left_col*width,
+  rightCol: width - (face.right_col*width),
+  topRow: face.top_row * height,
+  bottomRow: height - (face.bottom_row*height),
+}
+ }
+const displaybox=((facebox)=> {
+  console.log(facebox)
+  setbox(facebox)
+  });
   function handleClick() {
-    console.log('click');
-    app.models.predict("https://samples.clarifai.com/face-det.jpg").then(
-    function(res){
-      console.log(res)
-    },
-    function(err){});
+    app.models.predict(Clarifai.FACE_DETECT_MODEL,
+      input)
+    .then(res=> displaybox(calcualteface(res)))
+      // console.log(res.rawData.outputs[0].data.regions[0].region_info.bounding_box)
+    .catch(err=> console.log(err));
   }
+
+
   return (
   <>
-    <Particles/>
+<Particles/>
 <Navigation/>
 <Logo/>
 <Rank/>
-
 <ImgLinkFrom handleInput = {handleInput} handleClick={handleClick} />
-<FaceScanner/>
+<FaceScanner box={box} input = {input}/>
 </>
   );
  }
