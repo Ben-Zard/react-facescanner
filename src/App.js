@@ -4,11 +4,27 @@ import Logo from "./components/Logo/Logo";
 import Rank from "./components/Rank/Rank";
 import Register from "./components/Register/Register";
 import Particles from "./components/Particles/Particles";
-import { useState} from "react";
+import { useState, useEffect} from "react";
 import FaceLogic from "./components/FaceLogic/FaceLogic";
 import SignIn from "./components/SignIn/SignIn";
 
 function App() {
+//   const [user, setUser] = useState({
+//     id:'',
+//     name: '',
+//     email:'',
+//     entires : 0,
+//     joined: "",
+// });
+//  function loadUser(data){
+// setUser({  id:data.id,
+// name: data.name,
+// email:data.email,
+// entires : data.entires,
+// joined: data.joined
+// })
+//  }
+
   const [route, setRoute] = useState("signin");
   const [signedin, setsingin] = useState (false);
   function handleRoute(route) {
@@ -33,6 +49,7 @@ function App() {
       ) : route === "signin" ? (
         <SignIn handleRoute={handleRoute} />
       ) : (
+        // loadUser= {loadUser}
         <Register handleRoute={handleRoute} />
       )}
     </>

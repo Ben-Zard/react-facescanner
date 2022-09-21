@@ -2,11 +2,15 @@ import {useState} from 'react';
 
 const SignIn = ({handleRoute}) => {
     const [data,setData] = useState({
-      username:"",
-      password:""
+    id:'',
+    password: '',
+    name: '',
+     email:'',
+     entires : 0,
+     joined: "",
     })
     
-    const {username,password} = data;
+    const {email,password} = data;
     
     const changeHandler = e => {
       setData({...data,[e.target.name]:[e.target.value]});
@@ -14,19 +18,33 @@ const SignIn = ({handleRoute}) => {
     
     const submitHandler = e => {
       e.preventDefault();
-      console.log(data);
+      fetch('http://localhost:4000/signin',{
+        method:'post',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({
+            email: email[0],
+            password:password[0]
+        })
+      })
+      .then(res => res.json())
+      .then(data =>{
+        if (data === 'good'){
+             handleRoute('home')  
+        }
+      })
     }
       return (
         <div className='formalign'>
             <div className='forminner'>
           <div onSubmit={submitHandler} className = "form">
             <h1>Sing in</h1>
-            <label>Username</label>
-          <input type="text" name="username" value={username} onChange={changeHandler}/><br/>
+            <label>email</label>
+          <input type="text" name="email" value={email} onChange={changeHandler}/><br/>
           <label>Password</label>
           <input type="password" name="password" value={password} onChange={changeHandler}/><br/>
-          <input onClick = {()=>handleRoute('home')}
+          <input onClick = {submitHandler}
           type="submit" name="submit"/>
+          
           <p onClick = {()=>handleRoute('register')} className='register'>Register</p>
           </div>
           </div>
