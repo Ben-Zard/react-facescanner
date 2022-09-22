@@ -16,7 +16,7 @@ const Register = ({handleRoute}) => {
   }
   
   const submitHandler = e => {
-    // e.preventDefault();
+    e.preventDefault();
     fetch('http://localhost:4000/register',{
       method:'post',
       headers:{'Content-Type':'application/json'},

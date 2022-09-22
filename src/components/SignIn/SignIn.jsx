@@ -2,7 +2,7 @@ import {useState} from 'react';
 
 const SignIn = ({handleRoute}) => {
     const [data,setData] = useState({
-    id:'',
+      id:'',
     password: '',
     name: '',
      email:'',
@@ -28,7 +28,7 @@ const SignIn = ({handleRoute}) => {
       })
       .then(res => res.json())
       .then(data =>{
-        if (data === 'good'){
+        if (data.id){
              handleRoute('home')  
         }
       })

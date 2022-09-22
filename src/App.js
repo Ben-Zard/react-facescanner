@@ -9,21 +9,7 @@ import FaceLogic from "./components/FaceLogic/FaceLogic";
 import SignIn from "./components/SignIn/SignIn";
 
 function App() {
-//   const [user, setUser] = useState({
-//     id:'',
-//     name: '',
-//     email:'',
-//     entires : 0,
-//     joined: "",
-// });
-//  function loadUser(data){
-// setUser({  id:data.id,
-// name: data.name,
-// email:data.email,
-// entires : data.entires,
-// joined: data.joined
-// })
-//  }
+
 
   const [route, setRoute] = useState("signin");
   const [signedin, setsingin] = useState (false);
