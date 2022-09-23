@@ -11,7 +11,7 @@ const Navigation = ({ handleRoute, signedin }) => {
     <>
       <nav className="head">
         <p onClick={() => handleRoute("signin")} className="inner">
-          SignIn</p>
+          Sign In</p>
         <p onClick={() => handleRoute("register")} className="inner">
           Register</p>
       </nav>

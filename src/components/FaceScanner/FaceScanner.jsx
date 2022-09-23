@@ -4,7 +4,8 @@ const FaceScanner = ({input,box}) => {
   return (
     <div className='container'>
      <div className="centerface">
-      <img id = 'inputimg' alt="" src={input}className="photo"></img>
+      <img id = 'inputimg' alt="" src={input}className="photo"/>
+
       <div className="boudingbox" style = {{top:box.topRow , bottom:box.bottomRow, right:box.rightCol , left:box.leftCol }}></div>
      </div>
     </div>

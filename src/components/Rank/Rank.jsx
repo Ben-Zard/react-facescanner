@@ -9,13 +9,13 @@ const Rank = () => {
 
   const {entires,name} = data;
 
-  fetch('http://localhost:4000/users')
-  .then((json) => {
-    setData({
-      name: name,
-      entires: entires
-    });
-  })
+  // fetch('http://localhost:4000/users')
+  // .then((json) => {
+  //   setData({
+  //     name: name,
+  //     entires: entires
+  //   });
+  // })
   
 
   return (

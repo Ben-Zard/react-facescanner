@@ -37,8 +37,8 @@ const SignIn = ({handleRoute}) => {
         <div className='formalign'>
             <div className='forminner'>
           <div onSubmit={submitHandler} className = "form">
-            <h1>Sing in</h1>
-            <label>email</label>
+            <h1>Sign In</h1>
+            <label>Email</label>
           <input type="text" name="email" value={email} onChange={changeHandler}/><br/>
           <label>Password</label>
           <input type="password" name="password" value={password} onChange={changeHandler}/><br/>

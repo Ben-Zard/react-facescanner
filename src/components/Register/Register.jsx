@@ -39,10 +39,10 @@ const Register = ({handleRoute}) => {
         <div className='formalign'>
             <div className='forminner'>
           <div onSubmit={submitHandler} className = "form">
-            <h1>register</h1>
-            <label>name</label>
+            <h1>Register</h1>
+            <label>Name</label>
           <input type="text" name="name" value={name} onChange={changeHandler}/><br/>
-            <label>email</label>
+            <label>Email</label>
           <input type="text" name="email" value={email} onChange={changeHandler}/><br/>
           <label>Password</label>
           <input type="password" name="password" value={password} onChange={changeHandler}/><br/>

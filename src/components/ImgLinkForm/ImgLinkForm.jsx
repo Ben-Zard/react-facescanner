@@ -20,10 +20,10 @@ const ImgLinkForm = ({handleClick,handleInput,setData,data}) => {
     return (
         <div className='flexcenter'> 
         <p className='body'>
-            {  `This ??? has the abilty to detect any face` }
+            {  `I have the abilty to detect any face` }
         </p> 
             <input className = "input"type= 'text' onChange={handleInput}/> 
-        <button onClick={handleClick}> Detect Face</button>
+        <button onClick={handleClick} className = "button"> Detect Face</button>
         </div>
 
   )

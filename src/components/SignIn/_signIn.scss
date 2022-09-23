@@ -1,13 +1,16 @@
 .formalign {
     display: flex;
+    margin-top: 15rem;
     justify-content: center;
   .forminner {
     margin: 5px;
-background: rebeccapurple;
+background: rgb(255, 255, 255);
     text-align: left;
+    border-radius:4px;
     width: 15rem;
     .form {
         padding: 30px;
+        padding-bottom:3px;
         border-style: solid;
         border-width: 4px 4px 4px 4px;
         border-color: white;
@@ -17,13 +20,16 @@ background: rebeccapurple;
 flex-direction: column;
 width: 100%;
       input {
-        background-color: aqua;
+        background-color: rgb(233, 233, 252);
+        padding: 3px;
       }
       .register{
         text-decoration: none;
-        margin-top: .5rem;
+        margin-top: .8rem;
+        padding-bottom: 0;
         margin-bottom: 0;
         text-align: center;
+     text-decoration: underline;
       }
     }
   }
